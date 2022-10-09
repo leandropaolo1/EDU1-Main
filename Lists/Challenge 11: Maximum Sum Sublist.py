@@ -9,7 +9,7 @@ def find_max_sum_sublist(lst):
   sum_list = []
 
   for i in range(len(lst)):
-    int_sum = sum(lst[i:])
+    int_sum = sum(lst[-i:])
     sum_list.append(int_sum)
     print(lst[i:], int_sum)
   
@@ -24,7 +24,10 @@ find_max_sum_sublist(lst)
 
 """
 Solution:
+https://www.educative.io/module/lesson/data-structures-in-python/m2BgY42YGPr
 
+
+This solution is like the one on top but instead, it is going backwards! that is really cool
 """
 def find_max_sum_sublist(lst): 
     print(lst)
