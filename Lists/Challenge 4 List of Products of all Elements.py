@@ -26,23 +26,20 @@ arr = [24,12,8,6]
 
 """
 
-begin
-    function find_product(array_list :: Array{T,N}) where {T, N}
 
-        """
-        In this example, the myfunction function takes an array arr of type Array{T, N},
-        where T is any type and N is any number of dimensions. The where clause is used
-        to specify the type and number of dimensions of the array.
-        """
+def find_product(lst):
+    result = []
+    my_list = lst
+    for i in range(len(my_list)):
+        total = 1
+        current_element = my_list[i]
+        other_elements = my_list[:i] + my_list[i+1:]
 
-        new_array_list = []
-        iteration = 2
-        for value in eachindex(array_list)
-            println(array_list[iteration:end])
-            
-        end
+        if 0 in other_elements:
+            result.append(0)
+        else:
+            for ii in other_elements:
+                total *= ii
+            result.append(total)
 
-    end
-
-    @assert([24, 12, 8, 6] == find_product([1, 2, 3, 4]))
-end
+    return result
