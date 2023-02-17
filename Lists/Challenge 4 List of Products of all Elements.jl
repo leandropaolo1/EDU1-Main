@@ -36,13 +36,16 @@ begin
         """
 
         new_array_list = []
-        iteration = 2
+        iteration = 0
         for value in eachindex(array_list)
-            println(array_list[iteration:end])
-            
+            total = 1
+            iteration += 1
+            other_elements = array_list[:iteration] + array_list[iteration+1,:]
+            println(other_elements)
+
         end
 
     end
-
-    @assert([24, 12, 8, 6] == find_product([1, 2, 3, 4]))
+    find_product([1, 2, 3, 4])
+    #@assert([24, 12, 8, 6] == find_product([1, 2, 3, 4]))
 end
